@@ -1,0 +1,13 @@
+# Author: chandu
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+docs/bandit-report.json
+
+*.log
+*.tmp

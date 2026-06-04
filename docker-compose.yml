@@ -1,0 +1,10 @@
+# Author: chandu
+
+services:
+  appsec-demo:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      APP_HOST: 0.0.0.0
+      FLASK_ENV: production

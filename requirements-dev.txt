@@ -1,0 +1,4 @@
+# Author: chandu
+
+-r app/requirements.txt
+bandit>=1.7

@@ -1,0 +1,49 @@
+# Author: chandu
+
+name: AppSec CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r app/requirements.txt
+          pip install bandit
+
+      - name: Run tests
+        run: pytest tests
+
+      - name: Run Bandit SAST
+        run: bash scan/bandit_scan.sh
+
+      - name: Start sample app
+        run: |
+          python app/sample_app.py &
+          sleep 5
+
+      - name: Run OWASP ZAP DAST
+        uses: zaproxy/action-full-scan@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target: "http://localhost:5000"
+          rules_file: "scan/zap_scan.yml"
+          cmd_options: "-daemon -config api.disablekey=true"

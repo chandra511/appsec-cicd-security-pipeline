@@ -1,0 +1,13 @@
+# Author: chandu
+
+version: 1
+rules:
+  - id: 10021
+    name: "Detect directory listing"
+    alert: "Info"
+    confidence: "High"
+
+  - id: 40012
+    name: "Detect missing anti-CSRF tokens"
+    alert: "Medium"
+    confidence: "Medium"
