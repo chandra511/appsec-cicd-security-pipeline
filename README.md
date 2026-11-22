@@ -1,14 +1,14 @@
 # AppSec CI/CD Security Pipeline
 
-Author: chandu
+Author: chandra
 
 ## Project overview
 
 This project demonstrates how to add application security checks into a CI/CD workflow. It includes a small Flask app, secure headers, input validation, unit tests, Bandit SAST scanning, OWASP ZAP DAST configuration, vulnerability notes, and remediation documentation.
 
-## Why this project matters for jobs
+## Why this project matters 
 
-Application Security and DevSecOps roles pay well when the candidate can connect vulnerabilities to engineering workflows. This project shows that Chandu can find issues, explain risk, and place checks inside a pipeline instead of doing one-time manual testing only.
+Application Security and DevSecOps roles pay well when the candidate can connect vulnerabilities to engineering workflows. This project shows a person can find issues, explain risk, and place checks inside a pipeline instead of doing one-time manual testing only.
 
 ## Skills demonstrated
 
@@ -50,22 +50,6 @@ Application Security and DevSecOps roles pay well when the candidate can connect
 4. Run tests with `py -3.13 -m pytest tests`.
 5. Run SAST with `bash scan/bandit_scan.sh` or `scan/run_local_checks.ps1`.
 6. Review findings in `docs/vulnerability-report.md`.
-
-## What to show on LinkedIn
-
-- GitHub Actions run screenshot.
-- Test output screenshot.
-- Bandit scan output.
-- ZAP scan configuration.
-- Remediation note showing how a finding was fixed.
-
-## Interview talking points
-
-- Difference between SAST and DAST.
-- Why security checks should run before production deployment.
-- How to prioritize high, medium, and low findings.
-- How to prevent pipelines from becoming noisy or ignored.
-- How secure headers and input validation reduce common web risks.
 
 ## Safety note
 
